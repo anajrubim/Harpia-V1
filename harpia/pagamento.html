@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagamento — Harpia</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<div class="app">
+
+  <div class="map-header">
+    <a href="compra.html" class="back"><i class="fa-solid fa-arrow-left"></i></a>
+    <h3>Pagamento</h3>
+  </div>
+
+  <div class="container">
+
+    <div class="payment-summary-card">
+      <div class="paysummary-left">
+        <h4><i class="fa-solid fa-bolt" style="color:var(--laranja);margin-right:4px;"></i> Plano Pro</h4>
+        <p>500 pontos/mês • Mensal</p>
+      </div>
+      <div class="paysummary-price">R$ 39</div>
+    </div>
+
+    <p style="font-size:13px;font-weight:700;color:var(--texto);margin-bottom:12px;">Forma de pagamento</p>
+
+    <div class="pay-method-tabs">
+      <div class="pay-tab active" id="tabCartao" onclick="setMethod('cartao')">
+        <i class="fa-solid fa-credit-card"></i>
+        <span>Cartão de crédito</span>
+      </div>
+      <div class="pay-tab" id="tabPix" onclick="setMethod('pix')">
+        <i class="fa-brands fa-pix"></i>
+        <span>PIX</span>
+      </div>
+    </div>
+
+    <div id="formCartao">
+      <div class="card-form-section">
+        <label class="form-label">Número do cartão</label>
+        <input type="text" placeholder="0000 0000 0000 0000" maxlength="19" oninput="fmtCard(this)">
+      </div>
+      <div class="card-form-section">
+        <label class="form-label">Nome no cartão</label>
+        <input type="text" placeholder="Como aparece no cartão">
+      </div>
+      <div class="row" style="gap:12px;">
+        <div style="flex:1;">
+          <label class="form-label">Validade</label>
+          <input type="text" placeholder="MM/AA" maxlength="5">
+        </div>
+        <div style="flex:1;">
+          <label class="form-label">CVV</label>
+          <input type="text" placeholder="123" maxlength="3">
+        </div>
+      </div>
+      <div class="card-form-section">
+        <label class="form-label">Parcelas</label>
+        <select style="width:100%;padding:13px 16px;border-radius:10px;border:1.5px solid var(--border);font-size:14px;font-family:'Poppins',sans-serif;background:var(--bg);color:var(--texto);appearance:none;">
+          <option>1x de R$ 39,00 (sem juros)</option>
+          <option>2x de R$ 19,50 (sem juros)</option>
+          <option>3x de R$ 13,00 (sem juros)</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="formPix" style="display:none;">
+      <div class="pix-box">
+        <div class="qr-placeholder"><i class="fa-solid fa-qrcode"></i></div>
+        <h4>Escaneie o QR Code</h4>
+        <p>Abra o app do seu banco e escaneie o código ou copie a chave abaixo</p>
+        <button class="pix-copy-btn" onclick="this.innerHTML='<i class=\'fa-solid fa-check\'></i> Copiado!'">
+          <i class="fa-solid fa-copy"></i> Copiar chave PIX
+        </button>
+      </div>
+      <p style="font-size:12px;color:var(--subtexto);text-align:center;margin-bottom:16px;">O pagamento é processado instantaneamente. Válido por 30 minutos.</p>
+    </div>
+
+    <div class="security-note">
+      <i class="fa-solid fa-lock"></i>
+      <span>Pagamento 100% seguro com criptografia SSL</span>
+    </div>
+
+    <button class="btn-pay" onclick="confirmar(this)">
+      <i class="fa-solid fa-lock" style="margin-right:6px;"></i> Confirmar pagamento — R$ 39,00
+    </button>
+
+  </div>
+
+  <div id="payment-success" class="payment-success">
+    <div class="success-animation"><i class="fa-solid fa-check"></i></div>
+    <h2>Assinatura ativada!</h2>
+    <p>Plano Pro ativo. Aproveite!</p>
+  </div>
+
+</div>
+<script>
+function setMethod(m) {
+  document.getElementById('tabCartao').classList.toggle('active', m === 'cartao');
+  document.getElementById('tabPix').classList.toggle('active', m === 'pix');
+  document.getElementById('formCartao').style.display = m === 'cartao' ? '' : 'none';
+  document.getElementById('formPix').style.display = m === 'pix' ? '' : 'none';
+}
+
+function fmtCard(el) {
+  el.value = el.value.replace(/\D/g,'').replace(/(.{4})/g,'$1 ').trim().slice(0,19);
+}
+
+function confirmar(btn) {
+  btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin" style="margin-right:6px;"></i> Processando...';
+  btn.disabled = true;
+  setTimeout(() => {
+    document.getElementById('payment-success').classList.add('show');
+  }, 1800);
+  setTimeout(() => { window.location.href = 'home.html'; }, 4000);
+}
+</script>
+</body>
+</html>

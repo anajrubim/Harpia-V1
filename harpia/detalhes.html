@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linha 1 — Harpia</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<div class="app">
+
+  <div class="map-header">
+    <a href="listagem.html" class="back"><i class="fa-solid fa-arrow-left"></i></a>
+    <h3>Linha 1 — Padre Marcelo x Vila Velha II</h3>
+  </div>
+
+  <div class="container">
+
+    <div class="card status-card">
+      <div class="line-info-row">
+        <span class="big-badge">200</span>
+        <div>
+          <h4 style="font-size:15px;font-weight:800;text-align:left;">Linha 1</h4>
+          <p style="font-size:13px;color:var(--subtexto);text-align:left;">Padre Marcelo → Vila Velha II</p>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;margin-bottom:10px;">
+        <span class="info-chip"><i class="fa-solid fa-route"></i> Via Shibata</span>
+        <span class="info-chip"><i class="fa-solid fa-bus"></i> 4 carros em operação</span>
+      </div>
+      <span class="status ok">No horário</span>
+      <div class="tempo-info">
+        <strong>8 min</strong>
+        <p>Próximo ônibus</p>
+      </div>
+    </div>
+
+    <div class="actions">
+      <a href="mapa.html" class="action-btn"><i class="fa-solid fa-location-crosshairs"></i> Rastrear</a>
+      <a href="itinerario.html" class="action-btn"><i class="fa-solid fa-map-pin"></i> Itinerário</a>
+      <a href="chat-linha.html" class="action-btn"><i class="fa-solid fa-comments"></i> Chat</a>
+    </div>
+
+    <div class="card">
+      <h4 style="margin-bottom:12px;font-weight:700;">Próximos horários</h4>
+      <div class="times">
+        <span>06:00</span><span>06:45</span><span>07:30</span><span>08:15</span><span>09:00</span><span>09:45</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h4 style="margin-bottom:16px;font-weight:700;">Principais paradas</h4>
+      <div class="stops-list">
+        <div class="stop-item">
+          <div class="stop-connector"><div class="stop-dot terminus"></div><div class="stop-line-v"></div></div>
+          <div class="stop-content"><div class="stop-name">Padre Marcelo</div><span class="stop-tag">Terminal</span></div>
+        </div>
+        <div class="stop-item">
+          <div class="stop-connector"><div class="stop-dot"></div><div class="stop-line-v"></div></div>
+          <div class="stop-content"><div class="stop-name">Av. Shibata</div><span class="stop-time-badge">+8 min</span></div>
+        </div>
+        <div class="stop-item">
+          <div class="stop-connector"><div class="stop-dot"></div><div class="stop-line-v"></div></div>
+          <div class="stop-content"><div class="stop-name">Supermercado Shibata</div><span class="stop-time-badge">+12 min</span></div>
+        </div>
+        <div class="stop-item">
+          <div class="stop-connector"><div class="stop-dot active-stop"></div><div class="stop-line-v"></div></div>
+          <div class="stop-content"><div class="stop-name">Av. Independência</div><span class="stop-time-badge">+19 min</span><span class="stop-tag" style="margin-left:4px;">Aqui agora</span></div>
+        </div>
+        <div class="stop-item">
+          <div class="stop-connector"><div class="stop-dot terminus"></div></div>
+          <div class="stop-content"><div class="stop-name">Vila Velha II</div><span class="stop-tag">Terminal</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="bottom-nav">
+    <a href="home.html"><i class="fa-solid fa-house"></i></a>
+    <a href="listagem.html" class="active"><i class="fa-solid fa-bus"></i></a>
+    <a href="chat.html"><i class="fa-solid fa-comments"></i></a>
+    <a href="carteira.html"><i class="fa-solid fa-credit-card"></i></a>
+    <a href="perfil.html"><i class="fa-solid fa-user"></i></a>
+  </div>
+
+</div>
+</body>
+</html>
